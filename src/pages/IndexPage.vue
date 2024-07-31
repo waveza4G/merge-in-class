@@ -10,11 +10,18 @@
         filled
         v-model="name"
         label="Your name *"
-        hint="Name and surname"
+        hint="Name "
         lazy-rules
-        :rules="[ val => val && val.length > 0 || 'Please type something']"
+        :rules="[ val => val && val.length > 0 || 'Please type your name']"
       />
-
+      <q-input
+        filled
+        v-model="surname"
+        label="Your surname *"
+        hint="surname"
+        lazy-rules
+        :rules="[ val => val && val.length > 0 || 'Please type your surname']"
+      />
       <q-input
         filled
         type="number"
@@ -45,13 +52,14 @@ import { ref } from 'vue'
 export default {
   setup () {
     const $q = useQuasar()
-
-    const name = ref(null)
+    const name = ref("พรพิ")
+    const surname = ref("พรม")
     const age = ref(null)
     const accept = ref(false)
 
     return {
       name,
+      surname,
       age,
       accept,
 
